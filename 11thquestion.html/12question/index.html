@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Add Item Task</title>
+</head>
+<body>
+
+  <ul id="myList">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+  <button id="addBtn">Add Item</button>
+
+  <script>
+    const ul = document.querySelector("#myList");
+    const btn = document.querySelector("#addBtn");
+
+    btn.addEventListener("click", () => {
+      let newLi = document.createElement("li");
+      newLi.textContent = "New Item";
+
+      ul.appendChild(newLi);
+
+      let items = ul.querySelectorAll("li");
+      let index = items.length;
+
+      if (index % 2 === 1) {
+        newLi.style.fontWeight = "bold";
+        newLi.style.color = "blue";
+      } else {
+        newLi.style.fontStyle = "italic";
+        newLi.style.color = "red";
+      } 
+    });
+  </script>
+
+</body>
+</html>
